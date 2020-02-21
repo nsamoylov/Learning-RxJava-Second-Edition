@@ -1,4 +1,4 @@
-import io.reactivex.Observable;
+import io.reactivex.rxjava3.core.Observable;
 
 public class Ch3_47 {
     public static void main(String[] args) {
@@ -7,7 +7,6 @@ public class Ch3_47 {
                 .onErrorResumeNext((Throwable e) ->
                         Observable.just(-1).repeat(3))
                 .subscribe(i -> System.out.println("RECEIVED: " + i),
-                        e -> System.out.println("RECEIVED ERROR: " + e)
-                );
+                     e -> System.out.println("RECEIVED ERROR: " + e));
     }
 }

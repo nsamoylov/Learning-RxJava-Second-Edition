@@ -1,14 +1,14 @@
-import io.reactivex.Observable;
-import io.reactivex.schedulers.Schedulers;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 import java.net.URL;
 import java.util.Scanner;
 
 public class Ch6_10 {
     public static void main(String[] args) {
-        Observable.fromCallable(() ->
-                getResponse("https://api.github.com/users/thomasnield/starred")
-        ).subscribeOn(Schedulers.io())
+        String href = "https://api.github.com/users/thomasnield/starred";
+        Observable.fromCallable(() -> getResponse(href))
+                .subscribeOn(Schedulers.io())
                 .subscribe(System.out::println);
         sleep(10000);
     }

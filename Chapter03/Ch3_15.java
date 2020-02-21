@@ -1,10 +1,11 @@
-import io.reactivex.Observable;
+import io.reactivex.rxjava3.core.Observable;
 
 public class Ch3_15 {
     public static void main(String[] args) {
-        Observable<String> items = Observable.just("Alpha", "Beta");
-        items.filter(s -> s.startsWith("Z"))
-                .defaultIfEmpty("None")
+        Observable<String> menu =
+                Observable.just("Coffee", "Tea", "Espresso", "Latte");
+       //print menu
+        menu.startWithItem("COFFEE SHOP MENU")
                 .subscribe(System.out::println);
     }
 }

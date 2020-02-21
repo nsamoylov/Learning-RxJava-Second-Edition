@@ -1,4 +1,4 @@
-import io.reactivex.Observable;
+import io.reactivex.rxjava3.core.Observable;
 
 public class Ch3_44 {
     public static void main(String[] args) {
@@ -10,9 +10,7 @@ public class Ch3_44 {
                         return -1;
                     }
                 })
-                .subscribe(i -> System.out.println("RECEIVED: " +
-                                i),
-                        e -> System.out.println("RECEIVED ERROR: " + e)
-                );
+                .subscribe(i -> System.out.println("RECEIVED: " + i),
+                        e -> System.out.println("RECEIVED ERROR: " + e));
     }
 }
